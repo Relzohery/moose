@@ -135,7 +135,7 @@ class CoreExtension(components.Extension):
 #pylint: disable=missing-docstring
 
 class CodeBlock(components.TokenComponent):
-    RE = re.compile(r'\s*'r                    # capture leading whitespace
+    RE = re.compile(r'\s*'                     # capture leading whitespace
                     r'^`{3}(?P<settings>.*?)$' # start of code with key=value settings
                     r'(?P<code>.*?)^`{3}$',    # code and end of fenced block
                     flags=re.UNICODE|re.MULTILINE|re.DOTALL)
@@ -264,7 +264,7 @@ class ShortcutBlock(components.TokenComponent):
         return Shortcut(parent, key=info['key'], link=info['link'], string=info['key'])
 
 class ParagraphBlock(components.TokenComponent):
-    RE = re.compile(r'\s*'r              # capture whitespace
+    RE = re.compile(r'\s*'               # capture whitespace
                     '^(?P<inline>\S.*?)' # capture text beginning at start of a line up
                     r'(?=\Z|^$)',        # to the end or an empty line
                     flags=re.MULTILINE|re.DOTALL|re.UNICODE)

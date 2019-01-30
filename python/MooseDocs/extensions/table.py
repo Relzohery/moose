@@ -106,7 +106,7 @@ class TableCommandComponent(command.CommandComponent):
         return parent
 
 class TableComponent(components.TokenComponent):
-    RE = re.compile(r'\s*'r              # capture whitespace
+    RE = re.compile(r'\s*'               # capture whitespace
                     r'^(?P<table>\|.*?)' # table content
                     r'(?=\Z|^[^|]|^$)',  # end or line starting w/ character or emptyline
                     flags=re.MULTILINE|re.DOTALL|re.UNICODE)
