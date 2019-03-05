@@ -140,6 +140,9 @@ class Renderer(mixins.ConfigObject, mixins.ComponentObject):
         elif isinstance(page, pages.Directory):
             create_directory(page.destination)
 
+        elif isinstance(page, pages.Text):
+            pass
+
         else:
             LOG.error('Unknown Node type: %s', type(page))
 
